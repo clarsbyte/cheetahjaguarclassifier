@@ -12,11 +12,11 @@ through the hidden layer, the numbers will go through a sigmoid function to clas
 ### Second Model
 The second model uses transfer learning from imagenet to assist the learning process. It is much more accurate because of the experienced base model. The picture below illustrates the process well. ![](https://pub.mdpi-res.com/sensors/sensors-23-00570/article_deploy/html/images/sensors-23-00570-g001.png?1672823988) 
 We do not need to do the complex convolutional layers as the base model already executes the operation. The numbers will also go through a sigmoid activation function at the end as described previously in the first model.
-## Instructions
+## Instructions to Train Model
 1. Download dataset from [Kaggle](https://www.kaggle.com/datasets/iluvchicken/cheetah-jaguar-and-tiger)
 2. Install libraries via `pip install requirements.txt`
 3. Train the model
-4. Test images by uploading images from the internet and linking them through the path directory 
+4. Test images (256x256) by uploading images from the internet and linking them through the path directory 
 ```
 test_img1 = cv2.imread('chee.jpg') # modify chee.jpg
 result = int(model.predict(np.expand_dims(test_img1/255,0)) > 0.5)
